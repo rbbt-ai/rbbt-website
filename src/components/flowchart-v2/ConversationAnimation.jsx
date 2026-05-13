@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'; // eslint-disable-line 
 import { MessageBubble } from './MessageBubble';
 import { TypingIndicator } from './TypingIndicator';
 
-// Conversation data following the complete RBBT Sales flow for "Cliente Indeciso"
+// Conversation data following the complete Rbbt Sales flow for "Cliente Indeciso"
 // Flow: Discovery -> Profile -> Search -> Decision -> Cross-sell -> Email -> Login -> Checkout -> PIX
 export const conversationData = [
   // Scene 1: Discovery (Cliente Indeciso)

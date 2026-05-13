@@ -6,7 +6,7 @@ import { staggerContainer, fadeUp } from '@/lib/motion'
 import { viewportOnce } from '@/lib/animation-config'
 
 /**
- * PlatformPillars — os 3 pilares da infraestrutura RBBT Lab.
+ * PlatformPillars — os 3 pilares da infraestrutura Rbbt Lab.
  * Substitui PlatformOverview (V2). Apresenta Cognition Core / Atelier / The Bridge
  * como os componentes da plataforma AI-native que opera sobre operações existentes.
  *
@@ -63,7 +63,7 @@ export function PlatformPillars() {
               </span>
             </h2>
             <p className="mt-6 text-base text-[var(--muted)] leading-relaxed max-w-2xl">
-              A RBBT Lab é uma plataforma AI-native que opera sobre a operação existente do cliente.
+              A Rbbt Lab é uma plataforma AI-native que opera sobre a operação existente do cliente.
               Conectamos dados, sistemas legados e canais em uma camada que aprende. Quando a base
               precisa ser corrigida antes — normalização de catálogo, deduplicação, alinhamento entre
               sistemas de origem — fazemos esse trabalho primeiro, para que a inteligência tenha o

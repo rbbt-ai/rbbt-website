@@ -38,7 +38,7 @@ export function PlatformLayer() {
 
             <div className="space-y-5 text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-2xl">
               <p>
-                A RBBT Lab opera uma plataforma multi-agêntica proprietária organizada em três
+                A Rbbt Lab opera uma plataforma multi-agêntica proprietária organizada em três
                 camadas: o <span className="text-[var(--foreground)]">Cognition Core</span> orquestra
                 identidade, memória e raciocínio dos agentes; o{' '}
                 <span className="text-[var(--foreground)]">Atelier</span> é a workspace onde o

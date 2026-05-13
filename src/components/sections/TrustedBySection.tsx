@@ -5,7 +5,7 @@ import { staggerContainer, fadeUp } from '@/lib/motion'
 import { viewportOnce } from '@/lib/animation-config'
 
 /**
- * TrustedBySection — vitrine de marcas que operam com a RBBT Lab.
+ * TrustedBySection — vitrine de marcas que operam com a Rbbt Lab.
  * Logos reais (Camys, X-One) processados pra monocromático branco com fundo
  * transparente. NBA e Growth como SVG inline.
  *
@@ -40,7 +40,7 @@ export function TrustedBySection() {
           className="text-center"
         >
           <motion.div variants={fadeUp} className="flex justify-center mb-6">
-            <SectionLabel accent="muted">Operam com a RBBT Lab</SectionLabel>
+            <SectionLabel accent="muted">Operam com a Rbbt Lab</SectionLabel>
           </motion.div>
 
           <motion.p

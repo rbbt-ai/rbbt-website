@@ -7,7 +7,7 @@ import { viewportOnce } from '@/lib/animation-config'
 /**
  * ClosingDeclaration — fechamento da página /sobre.
  * Vem depois de VisionEditorial. Fluxo staccato de 4 frases +
- * parágrafo de fechamento sobre o propósito da RBBT Lab.
+ * parágrafo de fechamento sobre o propósito da Rbbt Lab.
  */
 
 const declarationLines = [
@@ -59,7 +59,7 @@ export function ClosingDeclaration() {
               A IA vai transformar a forma como empresas operam e humanos trabalham.
             </motion.p>
             <motion.p variants={fadeUp} className="text-[var(--foreground)]/90">
-              É pra isso que a RBBT Lab existe.
+              É pra isso que a Rbbt Lab existe.
             </motion.p>
           </motion.div>
         </motion.div>

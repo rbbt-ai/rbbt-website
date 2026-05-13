@@ -275,7 +275,7 @@ export function IntegratedDemo() {
   return (
     <div className="integrated-demo" ref={containerRef}>
       <h2 className="integrated-demo-title">
-        <span>RBBT Sales</span> — Agent Flow
+        <span>Rbbt Sales</span> — Agent Flow
       </h2>
 
       {isMobile ? (

@@ -23,8 +23,8 @@ const navLinks: NavLink[] = [
     label: 'Produtos',
     href: '#',
     dropdown: [
-      { label: 'RBBT Sales', href: '/sales', accent: 'sales' },
-      { label: 'RBBT Social', href: '/social', accent: 'social' },
+      { label: 'Rbbt Sales', href: '/sales', accent: 'sales' },
+      { label: 'Rbbt Social', href: '/social', accent: 'social' },
     ],
   },
   { label: 'Sobre', href: '/sobre' },
@@ -62,7 +62,7 @@ export function Header() {
             />
             <span
               className="flex items-baseline gap-1 font-[var(--font-display)] font-light text-lg tracking-tight leading-none"
-              aria-label="RBBT Lab"
+              aria-label="Rbbt Lab"
             >
               <span className="text-[var(--foreground)]">rbbt</span>
               <span className="text-[var(--foreground)]">lab</span>
@@ -168,7 +168,7 @@ export function Header() {
                   />
                   <span
                     className="flex items-baseline gap-1 font-[var(--font-display)] font-light text-lg tracking-tight leading-none"
-                    aria-label="RBBT Lab"
+                    aria-label="Rbbt Lab"
                   >
                     <span className="text-[var(--foreground)]">rbbt</span>
                     <span className="text-[var(--foreground)]">lab</span>
@@ -212,7 +212,7 @@ export function Header() {
                     )}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--sales-green)]" />
-                    RBBT Sales
+                    Rbbt Sales
                   </Link>
                   <Link
                     to="/social"
@@ -225,7 +225,7 @@ export function Header() {
                     )}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--social-blue)]" />
-                    RBBT Social
+                    Rbbt Social
                   </Link>
 
                   <Link

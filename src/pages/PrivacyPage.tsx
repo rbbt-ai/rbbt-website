@@ -28,7 +28,7 @@ export function PrivacyPage() {
                 Controlador
               </h2>
               <p>
-                Rabbit Tecnologia e Web3 Ltda (RBBT Lab), CNPJ 47.544.516/0001-60, com sede em São
+                Rabbit Tecnologia e Web3 Ltda (Rbbt Lab), CNPJ 47.544.516/0001-60, com sede em São
                 Paulo, Brasil.
               </p>
             </section>

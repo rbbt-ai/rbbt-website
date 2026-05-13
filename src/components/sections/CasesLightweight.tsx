@@ -8,7 +8,7 @@ import { viewportOnce } from '@/lib/animation-config'
 
 /**
  * Cases lightweight — três casos lado a lado.
- * Camys (origem RBBT Sales), X-One (origem RBBT Social), NBA Stores (em customização).
+ * Camys (origem Rbbt Sales), X-One (origem Rbbt Social), NBA Stores (em customização).
  * NBA destacado apenas pela cor do eyebrow (primary), mantendo proporção visual.
  */
 
@@ -29,28 +29,28 @@ interface CasePreview {
 const cases: readonly CasePreview[] = [
   {
     n: '01',
-    caseLabel: 'Origem · RBBT Sales',
+    caseLabel: 'Origem · Rbbt Sales',
     brand: 'Camys',
     logoSrc: '/logos/camys.png',
     logoHeight: 'h-7 md:h-8',
     description:
-      'Marca de moda feminina que vende, atende e fideliza pelo WhatsApp. Foi a operação real que deu origem ao RBBT Sales: um agente de vendas com memória, que conhece o catálogo, lê o histórico da cliente e conduz a conversa até o pedido — sem fricção, sem perder o tom da marca.',
+      'Marca de moda feminina que vende, atende e fideliza pelo WhatsApp. Foi a operação real que deu origem ao Rbbt Sales: um agente de vendas com memória, que conhece o catálogo, lê o histórico da cliente e conduz a conversa até o pedido — sem fricção, sem perder o tom da marca.',
     segment: 'Moda feminina',
     channel: 'WhatsApp',
-    productLabel: 'Ver RBBT Sales',
+    productLabel: 'Ver Rbbt Sales',
     productSlug: '/sales',
   },
   {
     n: '02',
-    caseLabel: 'Origem · RBBT Social',
+    caseLabel: 'Origem · Rbbt Social',
     brand: 'X-One',
     logoSrc: '/logos/xone.png',
     logoHeight: 'h-8 md:h-9',
     description:
-      'Marca de acessórios premium que constrói demanda no Instagram. Foi a operação que originou o RBBT Social: leitura de sinais em comentários e DMs, cruzamento entre orgânico e ads, e resposta na voz da marca. A inteligência identifica intenção de compra antes do clique e protege a experiência em escala.',
+      'Marca de acessórios premium que constrói demanda no Instagram. Foi a operação que originou o Rbbt Social: leitura de sinais em comentários e DMs, cruzamento entre orgânico e ads, e resposta na voz da marca. A inteligência identifica intenção de compra antes do clique e protege a experiência em escala.',
     segment: 'Acessórios premium',
     channel: 'Instagram',
-    productLabel: 'Ver RBBT Social',
+    productLabel: 'Ver Rbbt Social',
     productSlug: '/social',
   },
   {
@@ -60,7 +60,7 @@ const cases: readonly CasePreview[] = [
     logoSrc: '/logos/nba.png',
     logoHeight: 'h-12 md:h-14',
     description:
-      'Estamos customizando a infraestrutura RBBT Lab para a operação nacional da NBA Stores Brasil: 30 lojas físicas integradas em uma única camada de decisão. RBBT Social, RBBT Sales, ERP Microvix Linx e agentes especialistas operam conectados — normalização de dados, alertas em tempo real e inteligência aplicada onde gera resultado: eficiência operacional, gestão de estoque e times de loja decidindo com contexto.',
+      'Estamos customizando a infraestrutura Rbbt Lab para a operação nacional da NBA Stores Brasil: 30 lojas físicas integradas em uma única camada de decisão. Rbbt Social, Rbbt Sales, ERP Microvix Linx e agentes especialistas operam conectados — normalização de dados, alertas em tempo real e inteligência aplicada onde gera resultado: eficiência operacional, gestão de estoque e times de loja decidindo com contexto.',
     segment: '30 lojas físicas',
     channel: 'ERP Microvix Linx',
     productLabel: 'Falar com a gente',

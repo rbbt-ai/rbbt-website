@@ -17,7 +17,7 @@ const toolIcons = {
   knowledge: <Search size={16} />,
 };
 
-// Metrics that update based on conversation progress (following RBBT Sales flow)
+// Metrics that update based on conversation progress (following Rbbt Sales flow)
 function getMetricsForMessage(messageIndex) {
   // Flow stages and their metrics
   // 0-3: Discovery (no cart yet)
@@ -87,7 +87,7 @@ function getMetricsForMessage(messageIndex) {
   };
 }
 
-// Event log messages based on conversation progress (following RBBT Sales flow)
+// Event log messages based on conversation progress (following Rbbt Sales flow)
 function getEventsForMessage(messageIndex) {
   const events = [];
   const now = new Date();
@@ -98,7 +98,7 @@ function getEventsForMessage(messageIndex) {
     events.push({ id: `${messageIndex}-${offset}`, timestamp, message, type });
   };
 
-  // Events following the complete RBBT Sales flow
+  // Events following the complete Rbbt Sales flow
   if (messageIndex >= 0) addEvent(0, 'Cliente indeciso identificado', 'info');
   if (messageIndex >= 1) addEvent(2, 'Discovery iniciado: ocasião', 'info');
   if (messageIndex >= 3) addEvent(4, 'Perfil: Classica/Minimalista', 'success');

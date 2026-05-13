@@ -3,8 +3,8 @@ import { Container } from './Container'
 
 const footerLinks = {
   produtos: [
-    { label: 'RBBT Sales', href: '/sales' },
-    { label: 'RBBT Social', href: '/social' },
+    { label: 'Rbbt Sales', href: '/sales' },
+    { label: 'Rbbt Social', href: '/social' },
   ],
   empresa: [
     { label: 'Sobre', href: '/sobre' },
@@ -32,7 +32,7 @@ export function Footer() {
                 />
                 <span
                   className="flex items-baseline gap-1 font-[var(--font-display)] font-light text-lg tracking-tight leading-none"
-                  aria-label="RBBT Lab"
+                  aria-label="Rbbt Lab"
                 >
                   <span className="text-[var(--foreground)]">rbbt</span>
                   <span className="text-[var(--foreground)]">lab</span>
@@ -89,7 +89,7 @@ export function Footer() {
           <div className="mt-12 pt-8 border-t border-white/5">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
               <p className="text-xs text-[var(--muted)]">
-                © {new Date().getFullYear()} RBBT Lab. Todos os direitos reservados.
+                © {new Date().getFullYear()} Rbbt Lab. Todos os direitos reservados.
               </p>
               <p className="text-xs text-[var(--muted)]">
                 São Paulo, Brasil

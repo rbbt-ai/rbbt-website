@@ -245,7 +245,7 @@ function BlockNotIs() {
           text-[var(--foreground)] mb-12 md:mb-16 max-w-3xl
         "
       >
-        O que a RBBT Lab <span className="text-[var(--muted)]">não é.</span>
+        O que a Rbbt Lab <span className="text-[var(--muted)]">não é.</span>
       </motion.h3>
       <motion.ul variants={staggerContainer} className="space-y-8 md:space-y-10 max-w-3xl">
         {naoSomos.map((item) => (

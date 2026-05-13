@@ -29,7 +29,7 @@ const products: readonly ProductPreview[] = [
   {
     slug: '/sales',
     shortName: 'Sales',
-    fullName: 'RBBT Sales',
+    fullName: 'Rbbt Sales',
     status: 'production',
     statusLabel: 'Em produção',
     Icon: ShoppingBag,
@@ -42,7 +42,7 @@ const products: readonly ProductPreview[] = [
   {
     slug: '/social',
     shortName: 'Social',
-    fullName: 'RBBT Social',
+    fullName: 'Rbbt Social',
     status: 'beta',
     statusLabel: 'Em testes',
     Icon: BarChart3,

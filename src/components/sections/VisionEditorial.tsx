@@ -62,7 +62,7 @@ export function VisionEditorial() {
               </p>
 
               <p className="text-[var(--foreground)]/90">
-                A RBBT Lab existe para construir essa camada.
+                A Rbbt Lab existe para construir essa camada.
               </p>
 
               <p>

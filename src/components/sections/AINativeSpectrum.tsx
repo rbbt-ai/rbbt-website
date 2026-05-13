@@ -6,7 +6,7 @@ import { viewportOnce } from '@/lib/animation-config'
 
 /**
  * AINativeSpectrum — apresenta o espectro AI-driven → AI-first → AI-native
- * e posiciona a RBBT Lab como a camada AI-native que conecta a operação
+ * e posiciona a Rbbt Lab como a camada AI-native que conecta a operação
  * existente do cliente. Aparece no /sobre entre Team e PlatformLayer.
  *
  * Visual: 3 cards horizontais com progressão de intensidade — primeiro
@@ -111,7 +111,7 @@ export function AINativeSpectrum() {
             })}
           </motion.div>
 
-          {/* Closing — posicionamento RBBT */}
+          {/* Closing — posicionamento Rbbt */}
           <motion.div
             variants={fadeUp}
             className="mt-16 md:mt-20 max-w-3xl"
@@ -127,7 +127,7 @@ export function AINativeSpectrum() {
                 consiga ler e entender a empresa inteira.
               </p>
               <p>
-                A RBBT Lab é a parceira dessa transição. Trazemos a camada cognitiva que integra a
+                A Rbbt Lab é a parceira dessa transição. Trazemos a camada cognitiva que integra a
                 operação e, quando preciso, preparamos a base junto: normalização de dados na origem,
                 redesenho de fluxos, alinhamento entre sistemas. Em alguns casos, a plataforma pluga
                 em cima e a inteligência passa a operar. Em outros, o trabalho começa antes — na

@@ -10,7 +10,7 @@ import { usePrefersReducedMotion } from '@/lib/hooks'
 /**
  * GrowthConnectorSection — the ecosystem visualization.
  *
- * Layout: three blocks in linear sequence — RBBT Social → RBBT.GROWTH → RBBT Sales.
+ * Layout: three blocks in linear sequence — Rbbt Social → Rbbt.Growth → Rbbt Sales.
  * Animation: SVG connectors draw sequentially via anime.js v4 timeline.
  *
  * Why anime.js here: Framer Motion can do single path-draw with `pathLength`, but
@@ -93,10 +93,10 @@ export function GrowthConnectorSection() {
           {/* Connector diagram */}
           <div ref={containerRef} className="relative">
             <div className="grid grid-cols-3 items-center gap-4 md:gap-8">
-              {/* Left node — RBBT Social */}
-              <NodeEnd accent="social" label="RBBT Social" lines={['Escuta o', 'Instagram']} />
+              {/* Left node — Rbbt Social */}
+              <NodeEnd accent="social" label="Rbbt Social" lines={['Escuta o', 'Instagram']} />
 
-              {/* Center node — RBBT.GROWTH */}
+              {/* Center node — Rbbt.Growth */}
               <div className="flex justify-center">
                 <div
                   id="growth-node-center"
@@ -132,8 +132,8 @@ export function GrowthConnectorSection() {
                 </div>
               </div>
 
-              {/* Right node — RBBT Sales */}
-              <NodeEnd accent="sales" label="RBBT Sales" lines={['Guia no', 'WhatsApp']} />
+              {/* Right node — Rbbt Sales */}
+              <NodeEnd accent="sales" label="Rbbt Sales" lines={['Guia no', 'WhatsApp']} />
             </div>
 
             {/* SVG connector lines — drawn via anime.js timeline */}

@@ -23,7 +23,7 @@ export type ProductStatus = 'production' | 'beta' | 'roadmap'
 export type IntegrationStatus = 'active' | 'in-development' | 'planned'
 
 export interface ProductHero {
-  eyebrow: string             // "RBBT Sales · Em produção"
+  eyebrow: string             // "Rbbt Sales · Em produção"
   status: ProductStatus
   headlineLines: string[]     // for line-reveal animation (one per <span>)
   subtitle: string
@@ -65,7 +65,7 @@ export interface ProductCrossSell {
 
 export interface ProductConfig {
   slug: ProductSlug
-  name: string                // "RBBT Sales"
+  name: string                // "Rbbt Sales"
   shortName: string           // "Sales"
   accentColor: AccentColor
   hero: ProductHero
@@ -81,11 +81,11 @@ export interface ProductConfig {
 
 export const salesConfig: ProductConfig = {
   slug: 'sales',
-  name: 'RBBT Sales',
+  name: 'Rbbt Sales',
   shortName: 'Sales',
   accentColor: 'sales',
   hero: {
-    eyebrow: 'RBBT Sales · Em produção',
+    eyebrow: 'Rbbt Sales · Em produção',
     status: 'production',
     headlineLines: ['Conversa', 'que vira venda', 'no WhatsApp.'],
     subtitle:
@@ -134,7 +134,7 @@ export const salesConfig: ProductConfig = {
     eyebrow: 'Integrações',
     headline: 'Conectado ao seu e-commerce.',
     body:
-      'RBBT Sales se integra ao seu e-commerce e ao seu ERP para consulta de estoque, preço, status do pedido e histórico em tempo real. Não substitui sistema — conecta.',
+      'Rbbt Sales se integra ao seu e-commerce e ao seu ERP para consulta de estoque, preço, status do pedido e histórico em tempo real. Não substitui sistema — conecta.',
     items: [
       { label: 'Wake', status: 'active' },
       { label: 'Nuvemshop', status: 'active' },
@@ -152,7 +152,7 @@ export const salesConfig: ProductConfig = {
   crossSell: {
     slug: 'social',
     eyebrow: 'Combine com',
-    headline: 'RBBT Social.',
+    headline: 'Rbbt Social.',
     body:
       'Enquanto Sales fecha no WhatsApp, Social escuta o Instagram. Sinais do feed viram contexto de venda — e dúvidas da conversa viram pauta de conteúdo.',
     cta: { label: 'Conhecer Social', to: '/social' },
@@ -168,11 +168,11 @@ export const salesConfig: ProductConfig = {
 
 export const socialConfig: ProductConfig = {
   slug: 'social',
-  name: 'RBBT Social',
+  name: 'Rbbt Social',
   shortName: 'Social',
   accentColor: 'social',
   hero: {
-    eyebrow: 'RBBT Social · Em testes',
+    eyebrow: 'Rbbt Social · Em testes',
     status: 'beta',
     headlineLines: ['Cada sinal', 'do seu Instagram', 'vira decisão.'],
     subtitle:
@@ -234,7 +234,7 @@ export const socialConfig: ProductConfig = {
   crossSell: {
     slug: 'sales',
     eyebrow: 'Combine com',
-    headline: 'RBBT Sales.',
+    headline: 'Rbbt Sales.',
     body:
       'Social entende o que sua audiência quer. Sales transforma esse contexto em venda no WhatsApp.',
     cta: { label: 'Conhecer Sales', to: '/sales' },

@@ -38,7 +38,7 @@ const createInitialState = () => ({
 
 /**
  * Determines which tools to activate based on message content/context
- * Following the complete RBBT Sales flow for "Cliente Indeciso"
+ * Following the complete Rbbt Sales flow for "Cliente Indeciso"
  *
  * Tool responsibilities:
  * - Memory: nome da cliente, historico de compras, lembrancas do chat, contexto

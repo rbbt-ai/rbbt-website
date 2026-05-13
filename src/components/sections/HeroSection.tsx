@@ -46,7 +46,7 @@ export function HeroSection() {
             initial="hidden"
             animate="visible"
             variants={heroLabel}
-            aria-label="rbbt lab"
+            aria-label="Rbbt Lab"
             style={{
               fontFamily: 'var(--font-display)',
               fontWeight: 300,
