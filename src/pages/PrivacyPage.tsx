@@ -71,10 +71,10 @@ export function PrivacyPage() {
                 Você pode solicitar a qualquer momento acesso, correção, anonimização, portabilidade
                 ou eliminação dos seus dados. Para isso, escreva para{' '}
                 <a
-                  href="mailto:hello@rbbtlab.ai"
+                  href="mailto:thiago@rbbtlab.ai"
                   className="text-[var(--foreground)] underline underline-offset-2 hover:no-underline"
                 >
-                  hello@rbbtlab.ai
+                  thiago@rbbtlab.ai
                 </a>
                 .
               </p>

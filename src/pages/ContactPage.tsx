@@ -10,7 +10,7 @@ import { viewportOnce } from '@/lib/animation-config'
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
 const FORMSPREE_ENDPOINT = import.meta.env['VITE_FORMSPREE_ENDPOINT'] as string | undefined
-const CONTACT_EMAIL = 'contato@rbbtlab.ai'
+const CONTACT_EMAIL = 'thiago@rbbtlab.ai'
 
 export function ContactPage() {
   const [status, setStatus] = useState<FormStatus>('idle')
