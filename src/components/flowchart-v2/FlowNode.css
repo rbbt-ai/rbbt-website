@@ -1,0 +1,58 @@
+.flow-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #1a1a1d;
+  border: 1px solid #2a2a2d;
+  border-radius: 12px;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.flow-node__icon {
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.flow-node__label {
+  color: #9ca3af;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+/* Active state with purple glow and pulse animation */
+.flow-node--active {
+  opacity: 1;
+  border-color: #8b5cf6;
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.4),
+    0 0 40px rgba(139, 92, 246, 0.2);
+  animation: flow-node-pulse 2s ease-in-out infinite;
+}
+
+.flow-node--active .flow-node__icon {
+  color: #8b5cf6;
+}
+
+.flow-node--active .flow-node__label {
+  color: #e5e7eb;
+}
+
+@keyframes flow-node-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.4),
+      0 0 40px rgba(139, 92, 246, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(139, 92, 246, 0.6),
+      0 0 60px rgba(139, 92, 246, 0.3);
+  }
+}

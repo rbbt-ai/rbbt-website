@@ -1,0 +1,213 @@
+/* WhatsApp Demo - Dark Mode Styling */
+
+.whatsapp-container {
+  /* Mobile-first: iPhone-like dimensions */
+  width: 100%;
+  max-width: 300px;
+  height: 520px;
+  background-color: #0b141a;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .whatsapp-container {
+    max-width: 320px;
+    height: 540px;
+  }
+}
+
+@media (max-width: 400px) {
+  .whatsapp-container {
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+/* Chat Header */
+.whatsapp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 6px 10px 4px;
+  background-color: #1f2c34;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #aebac1;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.avatar-container {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6a7175;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  min-width: 0;
+}
+
+.contact-name {
+  color: #e9edef;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-status {
+  color: #8696a0;
+  font-size: 11px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.header-action {
+  background: none;
+  border: none;
+  color: #aebac1;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.header-action:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Chat Area */
+.whatsapp-chat-area {
+  flex: 1;
+  padding: 8px 16px;
+  overflow-y: auto;
+  background-color: #0b141a;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23182229' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Scrollbar styling */
+.whatsapp-chat-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.whatsapp-chat-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.whatsapp-chat-area::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+/* Input Area */
+.whatsapp-input-area {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  background-color: #1f2c34;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.input-action {
+  background: none;
+  border: none;
+  color: #8696a0;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.input-action:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.message-input-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-input {
+  width: 100%;
+  background-color: #2a3942;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 10px;
+  color: #e9edef;
+  font-size: 13px;
+  outline: none;
+}
+
+.message-input::placeholder {
+  color: #8696a0;
+}
+
+.mic-button {
+  background-color: #00a884;
+  color: #111b21;
+  border-radius: 50%;
+}
+
+.mic-button:hover {
+  background-color: #06cf9c;
+}

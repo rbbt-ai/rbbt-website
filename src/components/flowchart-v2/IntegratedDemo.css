@@ -1,0 +1,530 @@
+.integrated-demo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.integrated-demo-title {
+  text-align: center;
+  padding: 0 20px 16px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.integrated-demo-title span {
+  color: #8b5cf6;
+}
+
+.integrated-demo-subtitle {
+  text-align: center;
+  padding: 0 20px 20px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.integrated-demo-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px;
+  min-height: 0;
+}
+
+/* WhatsApp section - left side */
+.integrated-demo-whatsapp {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Flow connector line between WhatsApp and Agent Flow */
+.integrated-demo-connector {
+  width: 40px;
+  height: 16px;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.connector-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.connector-line {
+  stroke: #3a3a3d;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke 0.3s ease;
+}
+
+/* Active state - brighten line when data is flowing */
+.connector--receiving .connector-line,
+.connector--sending .connector-line {
+  stroke: #8b5cf6;
+  stroke-opacity: 0.6;
+}
+
+/* Traveling dot animation */
+.connector-dot {
+  fill: #8b5cf6;
+  filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.8));
+}
+
+/* Agent Flow section - center */
+.integrated-demo-flow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Intelligence Panel section - right side */
+.integrated-demo-intelligence {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive: stack vertically on tablet */
+@media (max-width: 1100px) {
+  .integrated-demo-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 10px;
+  }
+
+  .integrated-demo-connector {
+    width: 20px;
+    height: 40px;
+    transform: rotate(90deg);
+  }
+
+  .integrated-demo-title {
+    font-size: 20px;
+    padding: 16px 12px 12px;
+  }
+}
+
+/* ================================================================
+   MOBILE CTA BUTTON (replaces full demo on screens < 768px)
+   ================================================================ */
+
+.integrated-demo-mobile-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 48px;
+  gap: 16px;
+}
+
+.integrated-demo-cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 32px;
+  border: 1.5px solid rgba(139, 92, 246, 0.5);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.04) 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/* Subtle shimmer effect on the button */
+.integrated-demo-cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(139, 92, 246, 0.15) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  animation: cta-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes cta-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.integrated-demo-cta-button:hover,
+.integrated-demo-cta-button:focus-visible {
+  border-color: rgba(139, 92, 246, 0.8);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0.08) 100%);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.2), 0 0 48px rgba(139, 92, 246, 0.08);
+  transform: translateY(-1px);
+}
+
+.integrated-demo-cta-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.integrated-demo-cta-button:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 3px;
+}
+
+.cta-icon {
+  color: #8b5cf6;
+  flex-shrink: 0;
+  animation: cta-icon-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes cta-icon-pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.cta-text {
+  position: relative;
+  z-index: 1;
+}
+
+.integrated-demo-cta-hint {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  margin: 0;
+  text-align: center;
+}
+
+/* ================================================================
+   FULLSCREEN MODAL (portal-based overlay)
+   Uses a "virtual desktop viewport" approach:
+   - A fixed-size container (1200x680) renders content at desktop size
+   - A single CSS scale transform shrinks the whole thing to fit
+   - For portrait phones: rotate 90deg first, then scale to fit
+   ================================================================ */
+
+.integrated-demo-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0b141a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: modal-fade-in 0.3s ease-out;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Close button - stays fixed outside the scaled viewport */
+.integrated-demo-modal-close {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 10001;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(11, 20, 26, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.integrated-demo-modal-close:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.integrated-demo-modal-close:active {
+  transform: scale(0.92);
+}
+
+.integrated-demo-modal-close:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/*
+ * Scaler: transform (rotation + scale) is computed in JavaScript
+ * using window.innerWidth/innerHeight for iOS Safari accuracy.
+ * See FullscreenModal component in IntegratedDemo.jsx.
+ */
+.integrated-demo-modal-scaler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+ * Virtual viewport: fixed at desktop dimensions.
+ * Content inside renders as if on a 1200x680 desktop screen.
+ * All mobile overrides are neutralized inside this container.
+ */
+.integrated-demo-modal-viewport {
+  width: 1200px;
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/*
+ * Reset mobile overrides inside the modal viewport.
+ * The viewport is 1200px wide, so the <768px and <1100px media queries
+ * would fire based on the actual device screen. We force desktop layout
+ * by overriding those mobile styles within the viewport context.
+ */
+.integrated-demo-modal-viewport .integrated-demo-content {
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px;
+}
+
+.integrated-demo-modal-viewport .integrated-demo-connector {
+  display: flex !important;
+  width: 40px;
+  height: 16px;
+  transform: none !important;
+}
+
+.integrated-demo-modal-viewport .integrated-demo-whatsapp {
+  max-width: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+.integrated-demo-modal-viewport .integrated-demo-flow {
+  max-width: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  height: auto !important;
+}
+
+.integrated-demo-modal-viewport .integrated-demo-intelligence {
+  width: auto !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
+}
+
+/* Reset child component media query overrides that fire on small device viewports */
+
+/* WhatsAppDemo: prevent max-width:400px rule from setting height:100vh */
+.integrated-demo-modal-viewport .whatsapp-container {
+  max-width: 320px !important;
+  height: 540px !important;
+  border-radius: 20px !important;
+}
+
+/* IntelligencePanel: prevent max-width:1100px from shrinking and max-width:900px from hiding */
+.integrated-demo-modal-viewport .intelligence-panel {
+  display: flex !important;
+  width: 280px !important;
+  height: 540px !important;
+}
+
+.integrated-demo-modal-viewport .metric-value {
+  font-size: 15px !important;
+}
+
+.integrated-demo-modal-viewport .integrated-demo-title {
+  font-size: 20px !important;
+  padding: 0 20px 16px !important;
+}
+
+.integrated-demo-modal-viewport .integrated-demo-controls {
+  padding: 8px 16px 12px;
+  gap: 6px;
+}
+
+/* Portrait/landscape scaler transforms are now handled in JavaScript.
+   See FullscreenModal in IntegratedDemo.jsx for the computeTransform logic. */
+
+/* Mobile: hide the full demo content (handled in JSX, but also enforce via CSS) */
+@media (max-width: 768px) {
+  .integrated-demo-content {
+    gap: 16px;
+    padding: 8px;
+  }
+
+  /* Hide connector SVG on mobile */
+  .integrated-demo-connector {
+    display: none;
+  }
+
+  /* Constrain WhatsApp mockup */
+  .integrated-demo-whatsapp {
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Scale down the AgentFlowGraph */
+  .integrated-demo-flow {
+    max-width: 340px;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.75);
+    transform-origin: top center;
+    height: 233px;
+  }
+
+  /* Intelligence Panel full width */
+  .integrated-demo-intelligence {
+    width: 100%;
+    flex-shrink: 1;
+  }
+
+  .integrated-demo-title {
+    font-size: 18px;
+    padding: 12px 8px 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .integrated-demo-title {
+    font-size: 16px;
+    padding: 10px 8px 6px;
+  }
+}
+
+/* Progress indicator */
+.integrated-demo-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px 20px;
+  flex-shrink: 0;
+}
+
+/* Progress dots */
+.integrated-demo-progress {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3a3a3d;
+  transition: all 0.3s ease;
+}
+
+.progress-dot.completed {
+  background: #6b5c9e;
+}
+
+.progress-dot.active {
+  background: #8b5cf6;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+  transform: scale(1.2);
+}
+
+/* Restart button */
+.restart-button {
+  padding: 5px 14px;
+  border: 1px solid #2a2a2d;
+  border-radius: 6px;
+  background: transparent;
+  color: #6b6b6b;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.restart-button:hover {
+  color: #e5e5e5;
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.restart-button:active {
+  transform: scale(0.97);
+}
+
+/* Status text */
+.integrated-demo-status {
+  color: #8b8b8b;
+  font-size: 12px;
+  text-align: center;
+  min-height: 18px;
+}
+
+/* Responsive adjustments for controls */
+@media (max-width: 1100px) {
+  .integrated-demo-controls {
+    padding: 12px 16px 20px;
+    gap: 10px;
+  }
+
+  .integrated-demo-progress {
+    gap: 6px;
+  }
+
+  .progress-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .integrated-demo-controls {
+    padding: 10px 12px 16px;
+    gap: 8px;
+  }
+
+  .integrated-demo-progress {
+    gap: 5px;
+  }
+
+  .progress-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .integrated-demo-status {
+    font-size: 11px;
+  }
+}

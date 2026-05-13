@@ -1,0 +1,34 @@
+/* Inactive state: subtle gray line */
+.flow-connection__path {
+  stroke: #3a3a3a;
+  stroke-width: 2;
+  stroke-opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+/* Active state: purple dashed line */
+.flow-connection--active .flow-connection__path {
+  stroke: #8b5cf6;
+  stroke-opacity: 0.3;
+}
+
+.flow-connection__path-active {
+  stroke: #8b5cf6;
+  stroke-width: 2;
+  stroke-dasharray: 8 4;
+  stroke-opacity: 1;
+  animation: flow-connection-dash 0.5s linear infinite;
+}
+
+/* Traveling dot */
+.flow-connection__dot {
+  fill: #8b5cf6;
+  filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.8));
+}
+
+/* Dash animation for active connections */
+@keyframes flow-connection-dash {
+  to {
+    stroke-dashoffset: -12;
+  }
+}

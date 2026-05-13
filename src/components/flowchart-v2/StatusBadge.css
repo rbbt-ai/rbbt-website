@@ -1,0 +1,44 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 20px;
+  animation: status-badge-enter 0.2s ease-out;
+}
+
+.status-badge__spinner {
+  color: #8b5cf6;
+  animation: status-badge-spin 1s linear infinite;
+}
+
+.status-badge__text {
+  color: #c4b5fd;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Scale + fade entrance animation */
+@keyframes status-badge-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Spinner rotation animation */
+@keyframes status-badge-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

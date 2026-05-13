@@ -1,0 +1,79 @@
+/* MessageBubble Component Styles */
+
+.message-bubble-wrapper {
+  display: flex;
+  width: 100%;
+  margin: 2px 0;
+}
+
+.message-bubble-wrapper--agent {
+  justify-content: flex-start;
+}
+
+.message-bubble-wrapper--client {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  position: relative;
+  max-width: 85%;
+  padding: 5px 6px 6px 8px;
+  border-radius: 7.5px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #e9edef;
+  word-wrap: break-word;
+}
+
+/* Agent messages - green, left side */
+.message-bubble--agent {
+  background-color: #005c4b;
+  border-top-left-radius: 0;
+  margin-left: 8px;
+}
+
+/* Client messages - gray, right side */
+.message-bubble--client {
+  background-color: #202c33;
+  border-top-right-radius: 0;
+  margin-right: 8px;
+}
+
+.message-bubble__text {
+  display: inline;
+}
+
+.message-bubble__timestamp {
+  display: inline-flex;
+  float: right;
+  margin: 3px 0 -3px 6px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.6);
+  align-items: flex-end;
+}
+
+/* Message tail (triangle pointer) */
+.message-bubble__tail {
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 13px;
+}
+
+.message-bubble__tail--agent {
+  left: -8px;
+  background: linear-gradient(
+    to bottom right,
+    transparent 50%,
+    #005c4b 50%
+  );
+}
+
+.message-bubble__tail--client {
+  right: -8px;
+  background: linear-gradient(
+    to bottom left,
+    transparent 50%,
+    #202c33 50%
+  );
+}

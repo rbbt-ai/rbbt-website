@@ -1,0 +1,7 @@
+export { HomePage } from './HomePage'
+export { SalesPage } from './SalesPage'
+export { SocialPage } from './SocialPage'
+export { AboutPage } from './AboutPage'
+export { ContactPage } from './ContactPage'
+export { PrivacyPage } from './PrivacyPage'
+export { NotFoundPage } from './NotFoundPage'
