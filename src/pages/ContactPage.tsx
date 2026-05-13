@@ -1,7 +1,7 @@
 import { useState, type FormEvent, type ChangeEvent } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Send, CheckCircle, AlertCircle, Calendar } from 'lucide-react'
+import { Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { Container } from '@/components/layout/Container'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { staggerContainer, fadeUp } from '@/lib/motion'
@@ -9,19 +9,8 @@ import { viewportOnce } from '@/lib/animation-config'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
-// Formspree endpoint — set VITE_FORMSPREE_ENDPOINT in .env to enable form submission.
-// Without it, the form falls back to a mailto link.
 const FORMSPREE_ENDPOINT = import.meta.env['VITE_FORMSPREE_ENDPOINT'] as string | undefined
-const CONTACT_EMAIL = 'hello@rbbtlab.ai'
-const CALENDLY_URL = 'https://calendly.com/thiago-freire/30min'
-
-const channelOptions = [
-  'WhatsApp',
-  'Instagram',
-  'E-commerce próprio',
-  'Marketplace',
-  'Loja física',
-] as const
+const CONTACT_EMAIL = 'contato@rbbtlab.ai'
 
 export function ContactPage() {
   const [status, setStatus] = useState<FormStatus>('idle')
@@ -34,7 +23,6 @@ export function ContactPage() {
     message: '',
     lgpd: false,
   })
-  const [channels, setChannels] = useState<Set<string>>(new Set())
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -47,9 +35,8 @@ export function ContactPage() {
     }
 
     if (!FORMSPREE_ENDPOINT) {
-      // Fallback: open mailto with the form body
       const body = encodeURIComponent(
-        `Nome: ${formData.name}\nEmail: ${formData.email}\nEmpresa: ${formData.company}\nCargo: ${formData.role}\nCanais: ${[...channels].join(', ')}\n\n${formData.message}`,
+        `Nome: ${formData.name}\nEmail: ${formData.email}\nEmpresa: ${formData.company}\nCargo: ${formData.role}\n\n${formData.message}`,
       )
       window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Contato pelo site')}&body=${body}`
       setStatus('success')
@@ -66,19 +53,14 @@ export function ContactPage() {
           email: formData.email,
           company: formData.company,
           role: formData.role,
-          channels: [...channels].join(', '),
           message: formData.message,
         }),
       })
       if (!res.ok) throw new Error(`Status ${res.status}`)
       setStatus('success')
-    } catch (err) {
+    } catch {
       setStatus('error')
-      setErrorMessage(
-        err instanceof Error
-          ? `Algo deu errado. Tente novamente ou escreva para ${CONTACT_EMAIL}.`
-          : `Algo deu errado. Tente novamente ou escreva para ${CONTACT_EMAIL}.`,
-      )
+      setErrorMessage(`Algo deu errado. Tente novamente ou escreva para ${CONTACT_EMAIL}.`)
     }
   }
 
@@ -86,15 +68,6 @@ export function ContactPage() {
     const { name, value, type } = e.target
     const v = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     setFormData((prev) => ({ ...prev, [name]: v }))
-  }
-
-  const toggleChannel = (channel: string) => {
-    setChannels((prev) => {
-      const next = new Set(prev)
-      if (next.has(channel)) next.delete(channel)
-      else next.add(channel)
-      return next
-    })
   }
 
   return (
@@ -127,10 +100,8 @@ export function ContactPage() {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16">
-          {/* Form */}
-          <div className="lg:col-span-3">
-            {status === 'success' ? (
+        <div className="max-w-2xl">
+          {status === 'success' ? (
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -246,31 +217,6 @@ export function ContactPage() {
                 </motion.div>
 
                 <motion.div variants={fadeUp}>
-                  <label className="block text-sm font-medium text-[var(--foreground)] mb-3">
-                    Onde você vende hoje?
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    {channelOptions.map((channel) => (
-                      <button
-                        key={channel}
-                        type="button"
-                        onClick={() => toggleChannel(channel)}
-                        className={`
-                          rounded-full border px-4 py-2 text-sm transition-colors
-                          ${
-                            channels.has(channel)
-                              ? 'border-[var(--primary)]/50 bg-[var(--primary)]/[0.12] text-[var(--foreground)]'
-                              : 'border-white/10 bg-white/[0.02] text-[var(--muted)] hover:text-[var(--foreground)] hover:border-white/20'
-                          }
-                        `}
-                      >
-                        {channel}
-                      </button>
-                    ))}
-                  </div>
-                </motion.div>
-
-                <motion.div variants={fadeUp}>
                   <label htmlFor="message" className="block text-sm font-medium text-[var(--foreground)] mb-2">
                     O que você está tentando resolver?
                   </label>
@@ -356,70 +302,6 @@ export function ContactPage() {
                 </motion.button>
               </motion.form>
             )}
-          </div>
-
-          {/* Sidebar */}
-          <motion.aside
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-            variants={staggerContainer}
-            className="lg:col-span-2 space-y-6"
-          >
-            <motion.div variants={fadeUp} className="rounded-2xl border border-white/[0.08] bg-white/[0.015] p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Calendar className="w-5 h-5 text-[var(--primary)]" />
-                <h3 className="font-[var(--font-display)] text-base text-[var(--foreground)]">
-                  Agende direto
-                </h3>
-              </div>
-              <p className="text-sm text-[var(--muted)] mb-4 leading-relaxed">
-                Prefere reservar um horário agora?
-              </p>
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="
-                  inline-flex items-center gap-2 text-sm font-medium
-                  text-[var(--foreground)]
-                  border-b border-white/20 hover:border-white/60 pb-0.5
-                  transition-colors
-                "
-              >
-                Abrir agenda →
-              </a>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="rounded-2xl border border-white/[0.08] bg-white/[0.015] p-6">
-              <h3 className="font-[var(--font-display)] text-base text-[var(--foreground)] mb-3">
-                O que esperar
-              </h3>
-              <ol className="space-y-3 text-sm text-[var(--muted)]">
-                <li className="flex items-start gap-3">
-                  <span className="text-[var(--primary)] font-[var(--font-display)] shrink-0">01</span>
-                  Conversa de 30 minutos para entender seu varejo e suas dores.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[var(--primary)] font-[var(--font-display)] shrink-0">02</span>
-                  Onde a plataforma entra primeiro — Sales, Social ou ambos.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-[var(--primary)] font-[var(--font-display)] shrink-0">03</span>
-                  Proposta sob medida, com timeline e plano comercial.
-                </li>
-              </ol>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="rounded-2xl border border-white/[0.08] bg-white/[0.015] p-6">
-              <h3 className="font-[var(--font-display)] text-base text-[var(--foreground)] mb-2">
-                Tempo de resposta
-              </h3>
-              <p className="text-sm text-[var(--muted)] leading-relaxed">
-                Respondemos em até <span className="text-[var(--foreground)]">24 horas úteis</span>.
-              </p>
-            </motion.div>
-          </motion.aside>
         </div>
       </Container>
     </main>
