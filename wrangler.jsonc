@@ -6,6 +6,11 @@
     "directory": "./dist",
     "not_found_handling": "single-page-application"
   },
+  "routes": [
+    { "pattern": "rbbtlab.ai", "custom_domain": true },
+    { "pattern": "www.rbbtlab.ai", "custom_domain": true }
+  ],
+  "workers_dev": false,
   "observability": {
     "enabled": true
   }
